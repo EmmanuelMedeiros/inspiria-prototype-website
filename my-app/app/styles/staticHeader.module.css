@@ -1,0 +1,47 @@
+.container {
+    padding-block: 1rem;
+}
+
+.static_header {
+    display: flex;
+
+    align-items: center;
+    justify-content: space-around;
+
+    width: 100vw;
+}
+
+.static_header .header_text {
+    display: flex;
+    gap: 1.7rem;
+
+    align-items: center;
+
+    margin-top: .3rem;
+}
+
+.static_header .header_text p {
+    color: #eeeeee
+}
+
+.static_header .header_text p:hover {
+    color: white;
+
+    cursor: pointer;
+}
+
+.static_header .header_text .button_and_text {
+    border: solid white 1px;
+    border-radius: 10px;
+
+    padding: 1rem;
+}
+
+.static_header .header_text .button_and_text:hover {
+    background-color: white;
+    color: #DE1F92;
+
+    font-weight: bold;
+
+    border: none;
+}
