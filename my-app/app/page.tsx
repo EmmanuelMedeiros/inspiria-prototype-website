@@ -45,6 +45,7 @@ export default function Home() {
 
         <ParallaxLayer
         factor={1.2}
+        
           style={{background: "linear-gradient(90deg, rgba(32,189,246,1) 0%, rgba(121,39,225,1) 60%, rgba(253,21,160,1) 100%)", backgroundSize: 'cover'}}
           >
           <PageA/>
@@ -52,6 +53,7 @@ export default function Home() {
         
         <ParallaxLayer 
             speed={-.4}
+            className="mt-[10rem]"
           >
           <InspiringBlock/>
         </ParallaxLayer>
@@ -65,9 +67,10 @@ export default function Home() {
       </Parallax>
       
 
-      <div className={`${scrollY == undefined || scrollY < 300 ? 'opacity-0 pointer-events-none' : 'opacity-100'} transition-opacity duration-1000`}>
+      <div className={`${scrollY == undefined || scrollY < 300 ? 'opacity-0 pointer-events-none -translate-y-[10rem]' : 'opacity-100'} transition-opacity duration-1000`}>
         <FixedHeader/>
       </div>
+
     </>
   )
 }

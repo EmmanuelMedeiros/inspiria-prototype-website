@@ -17,7 +17,7 @@
     align-items: center;
 
     margin-left: 0rem;
-    margin-top: 30vh;
+    margin-top: 10vh;
 }
 
 .container .inspiring_text h1 {
@@ -74,7 +74,7 @@
     }
 
     .container .inspiring_block {
-        margin-top: 24vh;
+        margin-top: -4vh;
     }
 
     .container .inspiring_block button {
