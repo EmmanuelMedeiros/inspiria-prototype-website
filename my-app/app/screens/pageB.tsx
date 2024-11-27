@@ -8,9 +8,7 @@ import inspiriaPinkLogo from '../../public/inspiria_pink_logo.png'
 
 export default function PageB() {
 
-    
   const [scrollY, setScrollY] = useState(0)
-
 
   const handleScrollY = () => {
     setScrollY(document.documentElement.scrollTop)
