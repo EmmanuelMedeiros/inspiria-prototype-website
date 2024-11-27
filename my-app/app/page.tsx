@@ -62,7 +62,7 @@ export default function Home() {
       </Parallax>
       
 
-      <div className={`${scrollY == undefined || scrollY < 300 ? 'opacity-0 pointer-events-none -translate-y-[10rem]' : 'opacity-100'} transition-opacity duration-1000`}>
+      <div className={`${scrollY == undefined || scrollY < 300 ? 'opacity-0 pointer-events-none' : 'opacity-100'} transition-opacity duration-1000`}>
         <FixedHeader/>
       </div>
 
