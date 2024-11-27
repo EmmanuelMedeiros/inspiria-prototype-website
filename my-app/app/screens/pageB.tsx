@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react'
 import style from '../styles/pageB.module.css'
 import Image from 'next/image'
 
-import inspiriaPinkLogo from '../../public/inspiria_pink_logo.png'
 import testB from '../../public/test_d.png'
 
 export default function PageB() {
