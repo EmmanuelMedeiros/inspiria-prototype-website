@@ -5,6 +5,7 @@ import style from '../styles/pageB.module.css'
 import Image from 'next/image'
 
 import inspiriaPinkLogo from '../../public/inspiria_pink_logo.png'
+import testB from '../../public/test_d.png'
 
 export default function PageB() {
 
@@ -25,10 +26,16 @@ useEffect(() => {
             
             <div className={`${style.wrapper}`}>
                 <div className={`${style.logo_container}`}>
-                    <Image
+{/*                     <Image
                         src={inspiriaPinkLogo}
                         alt={"inspiria_pink_logo"}
                         width={300}
+                        className={`${style.inspiria_pink_logo}`}
+                    /> */}
+                    <Image
+                        src={testB}
+                        alt={"inspiria_pink_logo"}
+                        width={950}
                         className={`${style.inspiria_pink_logo}`}
                     />
                 </div>
