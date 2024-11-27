@@ -1,6 +1,6 @@
 'use client'
 
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import StaticHeader from '../components/staticHeader'
 import style from '../styles/pageA.module.css'
 

@@ -5,17 +5,12 @@ import InspiringBlock from "./components/inspiringBlock";
 import PageA from "./screens/pageA";
 import PageB from "./screens/pageB";
 
-import style from './styles.pageA.module.css'
-
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax'
 import FixedHeader from "./components/fixedHeader";
-import StaticHeader from "./components/staticHeader";
 
 export default function Home() {
 
-  const [scrollY, setScrollY]                   = useState<number>()
-  const [showStaticHeader, setShowStaticHeader] = useState<boolean>(false)
-
+  const [scrollY, setScrollY]  = useState<number>()
   const parallaxRef = useRef<IParallax>(null)
 
   function scrollListener() {

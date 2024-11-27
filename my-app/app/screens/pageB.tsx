@@ -10,13 +10,10 @@ export default function PageB() {
 
     
   const [scrollY, setScrollY] = useState(0)
-  const [scollTotal, setScrollTotal] = useState(0)
-  const [windowHeight, setWindowHeight] = useState(0)
+
 
   const handleScrollY = () => {
     setScrollY(document.documentElement.scrollTop)
-    setScrollTotal(document.documentElement.scrollHeight)
-    setWindowHeight(window.innerHeight)
     }
 
 useEffect(() => {
