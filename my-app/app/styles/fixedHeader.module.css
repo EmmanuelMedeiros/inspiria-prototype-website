@@ -1,0 +1,45 @@
+.container {
+    position: fixed;
+
+    padding: 3rem;
+    width: 100vw;
+
+    backdrop-filter: blur(5px);
+    background: rgb(150,30,219);
+    background: linear-gradient(90deg, rgba(150,30,219,0.10) 0%, rgba(222,31,146,0.10) 100%);
+}
+
+.container .fixed_header_items {
+    display: flex;
+
+    justify-content: space-around;
+    align-items: center;
+
+    margin: auto;
+}
+
+.container .fixed_header_items p{
+    font-size: 1.2rem;
+
+    opacity: .8;
+}
+
+.container .fixed_header_items p:hover{
+    cursor: pointer;
+
+    opacity: 1;
+}
+
+.container .inspiria_logo {
+    position: absolute;
+
+    left: 0;
+    right: 0;
+    bottom: 1rem;
+
+    margin: auto;
+}
+
+.container .inspiria_logo:hover {
+    cursor: pointer;
+}

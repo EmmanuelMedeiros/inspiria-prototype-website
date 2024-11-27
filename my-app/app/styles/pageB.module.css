@@ -1,0 +1,62 @@
+.container {
+    height: 100vh;
+
+    background: rgb(150,30,219);
+    background: linear-gradient(90deg, rgba(150,30,219,1) 0%, rgba(170,11,172,1) 62%, rgba(183,0,143,1) 100%);
+}
+
+.container .inspiria_pink_logo {
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+
+    margin: auto;
+}
+
+.container .inspiria_pink_logo:hover {
+    transform: translateX(-10rem);
+}
+
+.container .about_inspiria {
+    display: flex;
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+}
+
+.container .about_inspiria h1{
+    font-size: 4rem;
+
+    width: 20%;
+
+    margin-inline: auto;
+}
+
+.container .about_inspiria p {
+    margin-inline: auto;
+
+    width: 30%;
+}
+
+
+@media (width < 1180px) {
+
+    .container .about_inspiria h1{
+        font-size: 3.4rem;
+    
+        width: 20%;
+    
+        margin-inline: auto;
+    }
+
+}

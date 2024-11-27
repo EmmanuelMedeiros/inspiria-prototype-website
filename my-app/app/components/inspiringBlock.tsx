@@ -1,12 +1,9 @@
 'use client'
-
-import { useEffect, useState } from 'react';
-import StaticHeader from '../components/staticHeader'
 import style from '../styles/pageA.module.css'
+import { NextFontWithVariable } from "next/dist/compiled/@next/font";
 
 import localFont from "next/font/local";
-import { NextFontWithVariable } from 'next/dist/compiled/@next/font';
-
+import { useState } from "react";
 
 const italianaRegular = localFont({
     src: '../fonts/Italiana-Regular.ttf',
@@ -55,14 +52,13 @@ const tekoBold = localFont({
     weight: "100 900",
 });
 
-
 interface FontChoice {
     number: number,
     font: NextFontWithVariable
 }
 
-export default function PageA() {
-
+export default function InspiringBlock() {
+    
     const [currentFont, setCurrentFont] = useState<FontChoice>({number: 0, font: italianaRegular})
 
     const fontSwitchingInterval = setInterval(fontSwitching, 1000)
@@ -85,7 +81,7 @@ export default function PageA() {
                 setCurrentFont({number: 5, font: dotoRounded})
                 break;
             case 5: 
-                setCurrentFont({number: 7, font: hubotSans})
+                setCurrentFont({number: 6, font: hubotSans})
                 break;
             case 6: 
                 setCurrentFont({number: 0, font: tekoBold})
@@ -95,10 +91,21 @@ export default function PageA() {
         clearInterval(fontSwitchingInterval)
     }
 
+    return(
 
-    return (
-        <div className={style.container}>
-            <StaticHeader/>
+        <div className={`${style.container}`}>
+            <div className={`${style.inspiring_block}`}>
+
+            <div className={`${style.inspiring_text} ${inriaSansBold.className}`}>
+                <h1>INSPIRANDO <span className={`${currentFont.font.className}`}> SOLUÇÕES </span> INOVADORAS</h1>
+                <p>Combinamos tecnologia e estratégia para transformar o futuro dos negócios.</p>
+            </div>
+
+            <button className={`${inriaSansBold.className}`}>
+                INSPIRE-SE
+            </button>
         </div>
+
+    </div>
     )
 }

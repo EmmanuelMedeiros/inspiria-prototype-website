@@ -1,12 +1,19 @@
 import style from '../styles/staticHeader.module.css'
 
+import localFont from 'next/font/local'
 
+const inriaSansBold = localFont({
+    src: "../fonts/InriaSans-Bold.ttf",
+    variable: "--font-geist-sans",
+    weight: "100 900",
+  });
+  
 import inspiria_text_logo from '../../public/inspiria_text_logo.svg'
 import Image from 'next/image'
 
 export default function StaticHeader() {
     return(
-        <div className={style.container}>
+        <div className={`${style.container} ${inriaSansBold.className}`}>
             
             <div className={`${style.static_header}`}>
 

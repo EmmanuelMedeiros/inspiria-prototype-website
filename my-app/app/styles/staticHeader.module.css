@@ -12,6 +12,9 @@
 }
 
 .static_header .header_text {
+
+    font-size: 1.3rem;
+    
     display: flex;
     gap: 1.7rem;
 
@@ -44,4 +47,12 @@
     font-weight: bold;
 
     border: none;
+}
+
+@media (width < 1180px) {
+
+    .static_header .header_text {
+        font-size: 1rem;
+    }
+    
 }
