@@ -38,6 +38,9 @@
     border-radius: 10px;
 
     padding: 1rem;
+
+    transition: all;
+    transition-duration: 500ms;
 }
 
 .static_header .header_text .button_and_text:hover {
