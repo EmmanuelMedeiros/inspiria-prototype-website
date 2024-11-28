@@ -1,16 +1,21 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
+import Link from "next/link";
+
 import InspiringBlock from "./components/inspiringBlock";
 import PageA from "./screens/pageA";
 import PageB from "./screens/pageB";
 
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax'
 import FixedHeader from "./components/fixedHeader";
+import { Document } from "postcss";
+import PageSection from "./enum/PageSection";
 
 export default function Home() {
 
-  const [scrollY, setScrollY]  = useState<number>()
+  const [scrollY, setScrollY] = useState<number>()
+  const [currentSection, setCurrentSection] = useState<PageSection>(PageSection.Home)
   const parallaxRef = useRef<IParallax>(null)
 
   function scrollListener() {
@@ -28,7 +33,20 @@ export default function Home() {
   useEffect(scrollListener, [])
 
   useEffect(() => {
-    console.log(scrollY)
+
+    console.log("ScrollY: " + scrollY)
+    console.log("window innerheight: " + window.innerHeight)
+
+    if(scrollY != undefined) {
+
+      if(window.innerHeight - scrollY >= window.innerHeight - 100) {
+        setCurrentSection(PageSection.Home)
+      } else if(window.innerHeight - scrollY <= window.innerHeight - 101)
+        setCurrentSection(PageSection["About Us"])
+    }
+
+    console.log(currentSection)
+
   }, [scrollY])
 
   return(
@@ -36,6 +54,9 @@ export default function Home() {
       <Parallax 
         pages={2}
         ref={parallaxRef}
+        config={{
+          tension: 120
+        }}
         >
 
         <ParallaxLayer
@@ -43,7 +64,7 @@ export default function Home() {
         
           style={{background: "linear-gradient(90deg, rgba(32,189,246,1) 0%, rgba(121,39,225,1) 60%, rgba(253,21,160,1) 100%)", backgroundSize: 'cover'}}
           >
-          <PageA/>
+          <PageA itemRef={parallaxRef}/>
         </ParallaxLayer>
         
         <ParallaxLayer 
@@ -56,14 +77,16 @@ export default function Home() {
         <ParallaxLayer 
           offset={1}
           speed={.2}>
-          <PageB/>
+            <PageB/>
         </ParallaxLayer>
 
       </Parallax>
       
 
       <div className={`${scrollY == undefined || scrollY < 300 ? 'opacity-0 pointer-events-none' : 'opacity-100'} transition-opacity duration-1000`}>
-        <FixedHeader/>
+        <FixedHeader 
+          itemRef={parallaxRef}
+          currentSection={currentSection} />
       </div>
 
     </>

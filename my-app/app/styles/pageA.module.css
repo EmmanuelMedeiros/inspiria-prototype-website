@@ -37,7 +37,8 @@
 
 .container .inspiring_block button {
     background: rgb(32,189,246);
-    background: linear-gradient(230deg, rgba(32,189,246,1) 0%, rgba(121,39,225,1) 60%, rgba(253,21,160,1) 100%);
+    background: linear-gradient(230deg, hsl(196, 92%, 55%) 0%, rgba(121,39,225,1) 60%, rgba(253,21,160,1) 100%);
+    
     opacity: .5;
 
 
@@ -62,6 +63,7 @@
     transition: all;
     transition-duration: 1000ms;
 }
+
 
 @media (width < 1180px) {
 

@@ -1,14 +1,24 @@
+'use client'
+
 import style from '../styles/fixedHeader.module.css'
-
 import inspiriaPinkLogo from '../../public/inspiria_pink_logo.png'
+
 import Image from 'next/image'
+import HeaderRef from '../interface/HeaderRef'
+import PageSection from '../enum/PageSection'
 
 
-export default function FixedHeader() {
+export default function FixedHeader({ itemRef, currentSection }: HeaderRef) {
+
+    const scrollSection = (offSet: number) => {
+        itemRef.current?.scrollTo(offSet)
+    }
+
     return(
         <div className={`${style.container}`}>
         
             <Image
+                onClick={() => scrollSection(0)}
                 src={inspiriaPinkLogo}
                 width={40}
                 className={`${style.inspiria_logo} hover:animate-pulse`}
@@ -19,7 +29,9 @@ export default function FixedHeader() {
                 
                 <div className='flex gap-5'>
                     <p>Início</p>
-                    <p>Sobre nós</p>
+                    <p
+                        style={currentSection == PageSection['About Us'] ? {opacity: 1, textDecoration: 'underline'} : {}} 
+                        className={``}>Sobre nós</p>
                     <p>Benefícios</p>
                 </div>
 

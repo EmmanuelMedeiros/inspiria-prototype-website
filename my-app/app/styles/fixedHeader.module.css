@@ -6,7 +6,7 @@
 
     backdrop-filter: blur(5px);
     background: rgb(150,30,219);
-    background: linear-gradient(90deg, rgba(150,30,219,0.10) 0%, rgba(222,31,146,0.10) 100%);
+    background: linear-gradient(90deg, rgba(150,30,219,0.0) 10%, rgba(222,31,146,0.10) 100%);
 }
 
 .container .fixed_header_items {

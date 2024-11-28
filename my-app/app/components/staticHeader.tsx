@@ -1,17 +1,26 @@
+'use client'
+  
+import inspiria_text_logo from '../../public/inspiria_text_logo.svg'
 import style from '../styles/staticHeader.module.css'
 
 import localFont from 'next/font/local'
+import Image from 'next/image'
+
+import HeaderRef from '../interface/HeaderRef'
+
 
 const inriaSansBold = localFont({
     src: "../fonts/InriaSans-Bold.ttf",
     variable: "--font-geist-sans",
     weight: "100 900",
-  });
-  
-import inspiria_text_logo from '../../public/inspiria_text_logo.svg'
-import Image from 'next/image'
+});
 
-export default function StaticHeader() {
+export default function StaticHeader({ itemRef }: HeaderRef) {
+
+    const scrollToSection = (offset: number) => {
+        itemRef.current?.scrollTo(offset);
+      };
+
     return(
         <div className={`${style.container} ${inriaSansBold.className}`}>
             
@@ -26,7 +35,7 @@ export default function StaticHeader() {
                 
                 <div className={`${style.header_text}`}>
                     <p>Início</p>
-                    <p>Sobre nós</p>
+                    <p onClick={() => scrollToSection(1)}>Sobre nós</p>
                     <p>Benefícios</p>
                     <p>Serviços</p>
                     <p>Agentes Inteligentes</p>
