@@ -10,7 +10,7 @@ import PageSection from '../enum/PageSection'
 
 export default function FixedHeader({ itemRef, currentSection }: HeaderRef) {
 
-    const scrollSection = (offSet: number) => {
+    const scrollToSection = (offSet: number) => {
         itemRef.current?.scrollTo(offSet)
     }
 
@@ -18,7 +18,7 @@ export default function FixedHeader({ itemRef, currentSection }: HeaderRef) {
         <div className={`${style.container}`}>
         
             <Image
-                onClick={() => scrollSection(0)}
+                onClick={() => scrollToSection(0)}
                 src={inspiriaPinkLogo}
                 width={40}
                 className={`${style.inspiria_logo} hover:animate-pulse`}
@@ -28,7 +28,7 @@ export default function FixedHeader({ itemRef, currentSection }: HeaderRef) {
             <div className={`${style.fixed_header_items}`}>
                 
                 <div className='flex gap-5'>
-                    <p>Início</p>
+                    <p onClick={() => scrollToSection(0)}>Início</p>
                     <p
                         style={currentSection == PageSection['About Us'] ? {opacity: 1, textDecoration: 'underline'} : {}} 
                         className={``}>Sobre nós</p>
