@@ -1,7 +1,6 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
-import Link from "next/link";
 
 import InspiringBlock from "./components/inspiringBlock";
 import PageA from "./screens/pageA";
