@@ -8,7 +8,6 @@ import PageB from "./screens/pageB";
 
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax'
 import FixedHeader from "./components/fixedHeader";
-import { Document } from "postcss";
 import PageSection from "./enum/PageSection";
 
 export default function Home() {
