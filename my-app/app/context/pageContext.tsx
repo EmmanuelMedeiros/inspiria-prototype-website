@@ -1,4 +1,4 @@
-import { createContext, Dispatch, SetStateAction, useState } from "react";
+import { createContext, Dispatch, ReactNode, SetStateAction, useState } from "react";
 import PageSection from "../enum/PageSection";
 
 interface PageContextInterface {
@@ -25,7 +25,7 @@ const defaultPageContext: PageContextInterface = {
 
 const PageContext = createContext<PageContextInterface>(defaultPageContext)
 
-export function PageContextProvider({children}: any) {
+export function PageContextProvider({children}: Readonly<{children: React.ReactNode;}>) {
 
     const [ windowWidth, setWindowWidth ] = useState<number>()
     const [ openedMenu, setOpenedMenu ] = useState<boolean>(false)
