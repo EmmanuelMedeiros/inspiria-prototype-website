@@ -7,8 +7,12 @@ import Image from 'next/image'
 import HeaderRef from '../interface/HeaderRef'
 import PageSection from '../enum/PageSection'
 
+import { useContext } from "react";
+import PageContext from '../context/pageContext'
 
-export default function FixedHeader({ itemRef, currentSection }: HeaderRef) {
+export default function FixedHeader({ itemRef }: HeaderRef) {
+
+    const pageContext = useContext(PageContext)
 
     const scrollToSection = (offSet: number) => {
         itemRef.current?.scrollTo(offSet)
@@ -30,7 +34,7 @@ export default function FixedHeader({ itemRef, currentSection }: HeaderRef) {
                 <div className='flex gap-5'>
                     <p onClick={() => scrollToSection(0)}>Início</p>
                     <p
-                        style={currentSection == PageSection['About Us'] ? {opacity: 1, textDecoration: 'underline'} : {}} 
+                        style={pageContext.currentSection == PageSection['About Us'] ? {opacity: 1, textDecoration: 'underline'} : {}} 
                         className={``}>Sobre nós</p>
                     <p>Benefícios</p>
                 </div>

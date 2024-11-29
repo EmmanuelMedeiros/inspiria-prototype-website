@@ -2,6 +2,11 @@
 
 import localFont from "next/font/local";
 import "./globals.css";
+import { PageContextProvider } from "./context/pageContext";
+
+import { useContext } from "react";
+
+import PageContext from "./context/pageContext";
 
 const inriaSansBold = localFont({
   src: "./fonts/InriaSans-Bold.ttf",
@@ -15,14 +20,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
-  return (
 
-    <html lang="en">
-      <body
-        className={`${inriaSansBold.className} antialiased`}
-      >
-        {children}
-      </body>
-    </html>
+  return (
+    <PageContextProvider>
+      <html lang="en">
+          <body
+            className={`${inriaSansBold.className} antialiased`}
+          >
+            {children}
+          </body>
+      </html>
+    </PageContextProvider>
   );
 }

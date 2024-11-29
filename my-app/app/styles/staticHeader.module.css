@@ -2,6 +2,10 @@
     padding-block: 1rem;
 }
 
+#not_show {
+    display: none;
+}
+
 .static_header {
     display: flex;
 
@@ -9,6 +13,13 @@
     justify-content: space-around;
 
     width: 100vw;
+}
+
+.container .static_header.oppened_menu {
+    position: absolute;
+
+    width: 100vw;
+    height: 100vh;
 }
 
 .static_header .header_text {
@@ -52,10 +63,103 @@
     border: none;
 }
 
+.static_header .hamburger_menu {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.container .static_header .not_show {
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+}
+
 @media (width < 1180px) {
 
     .static_header .header_text {
         font-size: 1rem;
     }
     
+}
+
+@media (width <= 966px) {
+
+    .hamburger_menu_icon {
+        opacity: 1;
+        pointer-events: all;
+        visibility: visible;
+
+        font-size: 2.5rem;
+
+        position: absolute;
+        right: 2rem;
+        top: 2.5rem
+
+    }
+
+    .hamburger_menu_icon:hover {
+        cursor: pointer;
+    }
+
+    @keyframes left_slide {
+        0% {transform: translateX(100vw)}
+        100% {transform: translateX(0vw)}
+    }
+
+    @keyframes right_slide {
+        0% {display: block; transform: translateX(0vw)}
+        100% {transform: translateX(100vw)}
+    }
+
+    .oppened_menu {
+        position: fixed;
+
+        height: 100vh;
+        width: 100vw;
+
+        background-color: black;
+
+        transition: all;
+        transition-duration: 500ms;
+
+        animation: left_slide 500ms linear;
+    }
+
+    .closed_menu {
+        position: fixed;
+
+        height: 100vh;
+        width: 100vw;
+
+        background-color: black;
+
+        transition: all;
+        transition-duration: 500ms;
+
+        transform: translateX(100vw);
+        display: none;
+
+        animation: right_slide 500ms linear;
+    }
+
+    .oppened_menu .close_button {
+        font-size: 2rem;
+        
+        position: absolute;
+        right: 3rem;
+        top: 3rem;
+    }
+
+    .closed_menu .hamburger_menu,
+    .oppened_menu .hamburger_menu {
+        display: flex;
+        flex-direction: column;
+
+        justify-content: center;
+        align-items: center;
+        
+        height: 100vh;
+        margin: auto;
+    }
 }

@@ -22,7 +22,7 @@
 
 .container .about_inspiria {
     display: flex;
-
+    
     position: absolute;
     left: 0;
     right: 0;
@@ -53,10 +53,38 @@
 
     .container .about_inspiria h1{
         font-size: 3.4rem;
-    
-        width: 20%;
-    
+        width: 40%;
+    }
+
+    .container .about_inspiria p {
         margin-inline: auto;
+    
+        width: 50%;
+    }
+
+    .container .inspiria_pink_logo {
+
+        width: 50rem;
+    }
+
+}
+
+@media (width <= 510px) {
+    .container .about_inspiria h1{
+        font-size: 3rem;
+        width: 70%;
+    }
+
+    .container .inspiria_pink_logo {
+
+        height: 25rem;
+        width: 100rem;
+    }
+
+    .container .about_inspiria p {
+        margin-inline: auto;
+    
+        width: 80%;
     }
 
 }

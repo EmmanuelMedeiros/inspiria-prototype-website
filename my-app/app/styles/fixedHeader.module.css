@@ -44,3 +44,24 @@
 .container .inspiria_logo:hover {
     cursor: pointer;
 }
+
+
+@media (width < 966px) {
+
+    @keyframes pulsing {
+        0% {opacity: .5;}
+        50% {opacity: 1;}
+        100% {opacity: .5;}
+    }
+
+    .container .fixed_header_items {
+        display: none;
+    }
+
+    .container .inspiria_logo {        
+        bottom: 0rem;
+
+        animation: pulsing 3000ms infinite;
+    }
+
+}

@@ -15,7 +15,7 @@ export default function PageB() {
                     <Image
                         src={testB}
                         alt={"inspiria_pink_logo"}
-                        width={950}
+                        width={900}
                         className={`${style.inspiria_pink_logo}`}
                     />
                 </div>
