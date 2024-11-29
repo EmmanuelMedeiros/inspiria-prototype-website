@@ -6,6 +6,8 @@ import InspiringBlock from "./components/inspiringBlock";
 import PageA from "./screens/pageA";
 import PageB from "./screens/pageB";
 
+import inspiria_text_logo from '../public/inspiria_text_logo.svg'
+
 import { IParallax, Parallax, ParallaxLayer } from '@react-spring/parallax'
 import FixedHeader from "./components/fixedHeader";
 import PageSection from "./enum/PageSection";
@@ -16,6 +18,7 @@ import { useContext } from "react";
 import PageContext from "./context/pageContext";
 
 import { FiX } from "react-icons/fi";
+import Image from "next/image";
 
 export default function Home() {
 
@@ -104,21 +107,34 @@ export default function Home() {
 
       <div id={`${!pageContext.openedMenu ? hamburgerMenuStyle.not_show : ''}`} className={`${!pageContext.openedMenu ? hamburgerMenuStyle.closed_menu : hamburgerMenuStyle.oppened_menu}`}>
 
-          <FiX
-            onClick={() => pageContext.setOpenedMenu(false)}
-            className={`${hamburgerMenuStyle.close_button}`}
+        <FiX
+          onClick={() => pageContext.setOpenedMenu(false)}
+          className={`${hamburgerMenuStyle.close_button}`}
+        />
+
+        <div className={`${hamburgerMenuStyle.hamburger_menu}`}>
+
+          <Image
+            src={inspiria_text_logo}
+            width={300}
+            alt='inspiria_logo'
+            className={`${hamburgerMenuStyle.opened_menu_inspiria_logo}`}
           />
 
-          <div className={`${hamburgerMenuStyle.hamburger_menu}`}>
+          <p onClick={() => {scrollToSection(0)
+                            pageContext.setOpenedMenu(false)                            
+                      }}>Início
+          </p>
+          <p onClick={() => {scrollToSection(1)
+                            pageContext.setOpenedMenu(false)                            
+                      }}>Sobre nós
+          </p>
+          <p>Benefícios</p>
+          <p>Serviços</p>
+          <p>Agentes Inteligentes</p>
+          <p className={`${hamburgerMenuStyle.button_and_text}`}>Saiba Mais</p>
 
-            <p>Início</p>
-            <p onClick={() => scrollToSection(1)}>Sobre nós</p>
-            <p>Benefícios</p>
-            <p>Serviços</p>
-            <p>Agentes Inteligentes</p>
-            <p className={`${hamburgerMenuStyle.button_and_text}`}>Saiba Mais</p>
-
-          </div>
+        </div>
 
       </div>
 
