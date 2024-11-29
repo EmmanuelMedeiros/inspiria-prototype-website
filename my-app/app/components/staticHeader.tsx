@@ -9,9 +9,6 @@ import Image from 'next/image'
 import HeaderRef from '../interface/HeaderRef'
 
 import { CiMenuFries } from "react-icons/ci";
-import { FiX } from "react-icons/fi";
-
-import { useState } from 'react'
 
 import { useContext } from 'react'
 import PageContext from '../context/pageContext'
@@ -22,11 +19,9 @@ const inriaSansBold = localFont({
     weight: "100 900",
 });
 
-export default function StaticHeader({ itemRef, setOpenedMenu }: HeaderRef) {
+export default function StaticHeader({ itemRef }: HeaderRef) {
 
     const pageContext = useContext(PageContext)
-
-    const [showMenu, setShowMenu] = useState<boolean>(false)
 
     const scrollToSection = (offset: number) => {
         itemRef.current?.scrollTo(offset);
@@ -46,10 +41,10 @@ export default function StaticHeader({ itemRef, setOpenedMenu }: HeaderRef) {
 
                 <CiMenuFries
                     onClick={() => pageContext.setOpenedMenu(true)} 
-                    className={`${!showMenu && pageContext.windowWidth != undefined && pageContext.windowWidth <= 966 ? style.hamburger_menu_icon : style.not_show}`}    
+                    className={`${!pageContext.openedMenu && pageContext.windowWidth != undefined && pageContext.windowWidth <= 966 ? style.hamburger_menu_icon : style.not_show}`}    
                 />
 
-                <div className={`${style.header_text} ${pageContext.windowWidth !== undefined && pageContext.windowWidth <= 966 && !showMenu ? style.not_show : null}`}>
+                <div className={`${style.header_text} ${pageContext.windowWidth != undefined && pageContext.windowWidth < 966 ? style.not_show : null}`}>
                     <p>Início</p>
                     <p onClick={() => scrollToSection(1)}>Sobre nós</p>
                     <p>Benefícios</p>
