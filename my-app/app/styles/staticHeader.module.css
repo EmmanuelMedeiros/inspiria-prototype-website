@@ -6,6 +6,12 @@
     display: none;
 }
 
+.inspiria_text_logo {
+    position: absolute;
+
+    left: 2rem;
+}
+
 .static_header {
     display: flex;
 
@@ -86,6 +92,10 @@
 }
 
 @media (width <= 966px) {
+
+    .inspiria_text_logo {
+        left: .2rem;
+    }
 
     .hamburger_menu_icon {
         opacity: 1;
